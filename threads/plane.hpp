@@ -6,6 +6,9 @@
 #include <random>
 #include <string>
 #include <optional>
+#include <cstdio>
+#include <cstdlib>
+#include "./tools/coordinatesXY.hpp"
 
 
 using namespace std;
@@ -14,8 +17,16 @@ mutex waiting_planes_mutex;
 struct Plane
 {
     string identification;
+private:
+    coordinatesXY coords;
+public:
+    string coordsToString();
 };
 
+string Plane::coordsToString() {
+    string s = "X : " + to_string(coords.getX()) + " Y :" + to_string(coords.getY());
+    return s;
+}
 class Waiting_planes
 {
     queue<Plane> planes;
@@ -53,7 +64,7 @@ void add_plane_sometimes(Waiting_planes &waiting_planes, bool &stop_thread)
     {
         std::this_thread::sleep_for(3s);
         Plane plane;
-        plane.identification = "AF" + to_string(distribution(generator));
+        plane.identification = "AF" + to_string(distribution(generator))+ " coordinates " + plane.coordsToString();
         waiting_planes.add_a_plane(plane);
     }
 }

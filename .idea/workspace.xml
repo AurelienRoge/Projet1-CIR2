@@ -12,9 +12,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cebb6444-8543-4def-8c3b-a4d798bcba77" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/coordinatesXY.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/source.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/source.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/vc140.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/threads/plane.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/plane.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +57,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="thread_example" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="thread_example" TARGET_NAME="thread_example" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="thread_example" RUN_TARGET_NAME="thread_example">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -72,7 +77,8 @@
       <option name="presentableId" value="Default" />
       <updated>1638016364034</updated>
       <workItem from="1638016372307" duration="1078000" />
-      <workItem from="1638017503535" duration="2022000" />
+      <workItem from="1638017503535" duration="2686000" />
+      <workItem from="1638020266588" duration="2097000" />
     </task>
     <servers />
   </component>

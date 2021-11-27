@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.9)
 project(thread_example)
 
 
-set(SRCS threads/plane.hpp threads/airport.hpp source.cpp)
+set(SRCS threads/plane.hpp threads/airport.hpp source.cpp tools/coordinatesXY.hpp)
 
 add_executable (thread_example ${SRCS})
 

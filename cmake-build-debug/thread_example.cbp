@@ -93,6 +93,9 @@
 		<Unit filename="C:/Users/aurel/Documents/GitHub/Projet1-CIR2/threads/plane.hpp">
 			<Option target="thread_example"/>
 		</Unit>
+		<Unit filename="C:/Users/aurel/Documents/GitHub/Projet1-CIR2/tools/coordinatesXY.hpp">
+			<Option target="thread_example"/>
+		</Unit>
 		<Unit filename="C:/Users/aurel/Documents/GitHub/Projet1-CIR2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
