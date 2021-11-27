@@ -1,3 +1,0 @@
-C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/cmake-build-debug/CMakeFiles/thread_example.dir
-C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
