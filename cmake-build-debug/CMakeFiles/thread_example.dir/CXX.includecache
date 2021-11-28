@@ -53,4 +53,10 @@ string
 -
 optional
 -
+cstdio
+-
+cstdlib
+-
+./tools/coordinatesXY.hpp
+C:/Users/aurel/Documents/GitHub/Projet1-CIR2/threads/tools/coordinatesXY.hpp
 

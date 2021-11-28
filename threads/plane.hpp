@@ -21,7 +21,15 @@ private:
     coordinatesXY coords;
 public:
     string coordsToString();
+
+    friend ostream &operator<<(ostream &os, const Plane &plane);
 };
+
+ostream &operator<<(ostream &os, const Plane &plane){
+    os << "Plane " << plane.identification << "at coordinates :" << "X : " << plane.coords.getX()<< " Y :" << plane.coords.getY();
+
+    return os;
+}
 
 string Plane::coordsToString() {
     string s = "X : " + to_string(coords.getX()) + " Y :" + to_string(coords.getY());
@@ -56,7 +64,20 @@ public:
     }
 };
 
-void add_plane_sometimes(Waiting_planes &waiting_planes, bool &stop_thread)
+class planeList{
+    vector<Plane> list;
+public:
+    void newPlaneInList(Plane plane){
+        list.push_back(plane);
+    }
+    void printList(){
+        for (int i = 0; i < list.size(); i++) {
+            cout << list.at(i);
+        }
+    }
+};
+
+void add_plane_sometimes(Waiting_planes &waiting_planes,planeList &plane_List, bool &stop_thread)
 {
     default_random_engine generator;
     uniform_int_distribution<int> distribution(100, 800);
@@ -66,5 +87,7 @@ void add_plane_sometimes(Waiting_planes &waiting_planes, bool &stop_thread)
         Plane plane;
         plane.identification = "AF" + to_string(distribution(generator))+ " coordinates " + plane.coordsToString();
         waiting_planes.add_a_plane(plane);
+        plane_List.newPlaneInList(plane);
     }
 }
+

@@ -11,19 +11,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cebb6444-8543-4def-8c3b-a4d798bcba77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tools/coordinatesXY.hpp" afterDir="false" />
+    <list default="true" id="cebb6444-8543-4def-8c3b-a4d798bcba77" name="Changes" comment="système de coordonnées">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/source.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/source.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/vc140.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/threads/plane.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/plane.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,8 +75,16 @@
       <updated>1638016364034</updated>
       <workItem from="1638016372307" duration="1078000" />
       <workItem from="1638017503535" duration="2686000" />
-      <workItem from="1638020266588" duration="2097000" />
+      <workItem from="1638020266588" duration="6372000" />
     </task>
+    <task id="LOCAL-00001" summary="système de coordonnées">
+      <created>1638022453500</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638022453500</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +101,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="système de coordonnées" />
+    <option name="LAST_COMMIT_MESSAGE" value="système de coordonnées" />
   </component>
 </project>
