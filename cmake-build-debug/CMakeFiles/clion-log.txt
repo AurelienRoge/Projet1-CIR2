@@ -1,4 +1,4 @@
-"A:\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" C:\Users\aurel\Documents\GitHub\Projet1-CIR2
+"C:\Users\Administrateur\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\Administrateur\Documents\Repository\CLion repo\CIR2 PROJET1\Projet1-CIR2"
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/aurel/Documents/GitHub/Projet1-CIR2/cmake-build-debug
+-- Build files have been written to: C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/cmake-build-debug

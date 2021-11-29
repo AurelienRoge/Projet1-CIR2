@@ -1,6 +1,6 @@
 class coordinatesXY{
 private:
-    float X,Y;
+    float X = 0,Y = 0;
 public:
     float getX() const{
         return X;

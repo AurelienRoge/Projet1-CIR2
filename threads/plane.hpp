@@ -8,7 +8,7 @@
 #include <optional>
 #include <cstdio>
 #include <cstdlib>
-#include "./tools/coordinatesXY.hpp"
+#include "../tools/trajectory.h++"
 
 
 using namespace std;
@@ -19,22 +19,50 @@ struct Plane
     string identification;
 private:
     coordinatesXY coords;
+    coordinatesXY destination;
+    float speed = 1;
+    trajectory trajectoire;
 public:
     string coordsToString();
+    void updateDestination(coordinatesXY newDestination);
+    void updateDestination(float X, float Y);
+    void printTrajectory(){
+        trajectoire.printTrajectory();
+    }
+    void updateCoordinates();
 
     friend ostream &operator<<(ostream &os, const Plane &plane);
 };
 
 ostream &operator<<(ostream &os, const Plane &plane){
-    os << "Plane " << plane.identification << "at coordinates :" << "X : " << plane.coords.getX()<< " Y :" << plane.coords.getY();
+    os << "Plane " << plane.identification << " at coordinates :" << "X : " << plane.coords.getX()<< " Y :" << plane.coords.getY();
 
     return os;
+}
+
+void Plane::updateDestination(coordinatesXY newDestination) {
+    destination = newDestination;
+    trajectoire.calculateTrajectory(coords,destination);
+}
+
+void Plane::updateDestination(float X, float Y) {
+    coordinatesXY tmp(X,Y);
+    destination = tmp;
+    trajectoire.calculateTrajectory(coords,destination);
+}
+
+void Plane::updateCoordinates() {
+    float newX = speed*trajectoire.getCoeffX();
+    float newY = speed*trajectoire.getCoeffY();
+    coords.setX(newX);
+    coords.setY(newY);
 }
 
 string Plane::coordsToString() {
     string s = "X : " + to_string(coords.getX()) + " Y :" + to_string(coords.getY());
     return s;
 }
+
 class Waiting_planes
 {
     queue<Plane> planes;
@@ -65,15 +93,21 @@ public:
 };
 
 class planeList{
-    vector<Plane> list;
+private:
+    int size;
 public:
+    vector<Plane> list;
     void newPlaneInList(Plane plane){
         list.push_back(plane);
     }
     void printList(){
+        cout << "planeListPrint :" << endl;
         for (int i = 0; i < list.size(); i++) {
-            cout << list.at(i);
+            cout << i << ":" << list.at(i) << endl;
         }
+    }
+    int getSize(){
+        return list.size();
     }
 };
 
@@ -83,11 +117,27 @@ void add_plane_sometimes(Waiting_planes &waiting_planes,planeList &plane_List, b
     uniform_int_distribution<int> distribution(100, 800);
     while (!stop_thread)
     {
-        std::this_thread::sleep_for(3s);
+        std::this_thread::sleep_for(6s);
         Plane plane;
-        plane.identification = "AF" + to_string(distribution(generator))+ " coordinates " + plane.coordsToString();
+        plane.identification = "AF" + to_string(distribution(generator));
         waiting_planes.add_a_plane(plane);
         plane_List.newPlaneInList(plane);
+        plane_List.printList();
+    }
+}
+
+void updatePlanesCoordinates(planeList list, bool &stop_thread){
+    while(!stop_thread){
+        std::this_thread::sleep_for(1s);
+        if(!stop_thread) {
+            cout << "List size : " << list.list.size() << endl;
+            for (int i = 0; i < list.getSize(); i++) {
+                list.list.at(i).updateDestination(100,100);
+                list.list.at(i).updateCoordinates();
+            }
+            cout << "condition if  = true";
+        }
+
     }
 }
 

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/thread_example.dir/source.cpp.obj"
+  "libthread_example.dll.a"
   "thread_example.exe"
   "thread_example.exe.manifest"
-  "thread_example.lib"
   "thread_example.pdb"
 )
 

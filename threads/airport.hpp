@@ -22,6 +22,13 @@ public:
         planes.push_back(plane);
         airport_mutex.unlock();
     }
+    void planesVectorPrint(){
+        cout << "Liste avions dans l'aeroport : " << endl;
+        for(int i = 0; i < planes.size(); i++){
+            cout << i << ": " << planes.at(i) << endl;
+
+        }
+    }
     friend ostream &operator<<(ostream &os, const Airport &airport);
 };
 
@@ -45,6 +52,7 @@ void airport_control(Airport &airport, Waiting_planes &waiting_planes, bool &sto
             {
                 cout << "Add a plane " << plane.value().identification << endl;
                 airport.add_a_plane(*plane);
+                //airport.planesVectorPrint();
             }
         }
     }

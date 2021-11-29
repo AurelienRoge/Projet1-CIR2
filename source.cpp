@@ -14,9 +14,15 @@ int main()
     bool stop_thread = false;
     std::thread airport_thread(airport_control, std::ref(airport), std::ref(waiting_planes), std::ref(stop_thread));
     std::thread add_plane(add_plane_sometimes, std::ref(waiting_planes), std::ref(plane_List), ref(stop_thread));
-    cout << "Test test test1" << endl;
+    std::thread coordinatesUpdateThread(updatePlanesCoordinates, std::ref(plane_List), std::ref(stop_thread));
+    Plane testPlane;
+    testPlane.identification = "TestPlane";
+    testPlane.updateDestination(100,10);
+    testPlane.printTrajectory();
+    plane_List.newPlaneInList(testPlane);
     while (1)
     {
+        //cout << "Boucle while" << endl;
 
         string name;
         cin >> name;
@@ -28,6 +34,7 @@ int main()
         Plane plane;
         plane.identification = name;
         waiting_planes.add_a_plane(plane);
+
 
 
     }
