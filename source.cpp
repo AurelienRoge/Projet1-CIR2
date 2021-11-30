@@ -19,6 +19,7 @@ int main()
     testPlane.identification = "TestPlane";
     testPlane.updateDestination(100,10);
     testPlane.printTrajectory();
+    cout << "New coords :" << testPlane.coordsToString();
     plane_List.newPlaneInList(testPlane);
     while (1)
     {

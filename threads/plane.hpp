@@ -21,6 +21,7 @@ private:
     coordinatesXY coords;
     coordinatesXY destination;
     float speed = 10;
+    bool atDestination = true;
     trajectory trajectoire;
 public:
     string coordsToString();
@@ -29,6 +30,7 @@ public:
     void printTrajectory(){
         trajectoire.printTrajectory();
     }
+    void updateSpeed(float newSpeed);
     void updateCoordinates();
 
     friend ostream &operator<<(ostream &os, const Plane &plane);
@@ -41,26 +43,39 @@ ostream &operator<<(ostream &os, const Plane &plane){
 }
 
 void Plane::updateDestination(coordinatesXY newDestination) {
+
+    atDestination = false;
     destination = newDestination;
     trajectoire.calculateTrajectory(coords,destination);
 }
 
 void Plane::updateDestination(float X, float Y) {
+
+    atDestination = false;
     coordinatesXY tmp(X,Y);
+    trajectoire.calculateTrajectory(coords,tmp);
     destination = tmp;
-    trajectoire.calculateTrajectory(coords,destination);
 }
 
 void Plane::updateCoordinates() {
-    float newX = speed*trajectoire.getCoeffX();
-    float newY = speed*trajectoire.getCoeffY();
-    coords.setX(newX);
-    coords.setY(newY);
+    if((coords.getX() != destination.getX()) && (coords.getY() != destination.getY())){
+        float newX = this->coords.getX() + speed * trajectoire.getCoeffX();
+        float newY = this->coords.getY() + speed * trajectoire.getCoeffY();
+        coords.setX(newX);
+        coords.setY(newY);
+    }
+    else{
+        atDestination = true;
+    }
 }
 
 string Plane::coordsToString() {
     string s = "X : " + to_string(coords.getX()) + " Y :" + to_string(coords.getY());
     return s;
+}
+
+void Plane::updateSpeed(float newSpeed) {
+    speed = newSpeed;
 }
 
 class Waiting_planes
@@ -92,11 +107,13 @@ public:
     }
 };
 
+
+
 class planeList{
 private:
     int size;
 public:
-    vector<Plane> list;
+    vector<Plane> list; //à refaire en prenant l'adresse et non la valeur
     void newPlaneInList(Plane plane){
         list.push_back(plane);
     }
@@ -135,7 +152,7 @@ void updatePlanesCoordinates(planeList list, bool &stop_thread){
     }
 }
 
-void placeMovement(){
+void planeMovement(){
 
 }
 
