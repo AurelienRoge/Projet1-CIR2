@@ -13,8 +13,8 @@ iostream
 -
 string
 -
-threads/airport.hpp
-C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/threads/airport.hpp
+threads/planeThreadFunction.hpp
+C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/threads/planeThreadFunction.hpp
 
 C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/threads/airport.hpp
 thread
@@ -59,6 +59,10 @@ cstdlib
 -
 ../tools/trajectory.h++
 C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/tools/trajectory.h++
+
+C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/threads/planeThreadFunction.hpp
+airport.hpp
+C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/threads/airport.hpp
 
 C:/Users/Administrateur/Documents/Repository/CLion repo/CIR2 PROJET1/Projet1-CIR2/tools/coordinatesXY.hpp
 

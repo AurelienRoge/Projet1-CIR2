@@ -20,7 +20,7 @@ struct Plane
 private:
     coordinatesXY coords;
     coordinatesXY destination;
-    float speed = 1;
+    float speed = 10;
     trajectory trajectoire;
 public:
     string coordsToString();
@@ -111,33 +111,31 @@ public:
     }
 };
 
-void add_plane_sometimes(Waiting_planes &waiting_planes,planeList &plane_List, bool &stop_thread)
+Plane add_plane_sometimes(Waiting_planes &waiting_planes,planeList &plane_List)
 {
-    default_random_engine generator;
-    uniform_int_distribution<int> distribution(100, 800);
-    while (!stop_thread)
-    {
-        std::this_thread::sleep_for(6s);
-        Plane plane;
-        plane.identification = "AF" + to_string(distribution(generator));
-        waiting_planes.add_a_plane(plane);
-        plane_List.newPlaneInList(plane);
-        plane_List.printList();
-    }
+    Plane plane;
+    plane.identification = "AF" + to_string(rand()%1000 + 100);
+    waiting_planes.add_a_plane(plane);
+    plane_List.newPlaneInList(plane);
+    //plane_List.printList();
+    return plane;
 }
 
 void updatePlanesCoordinates(planeList list, bool &stop_thread){
     while(!stop_thread){
-        std::this_thread::sleep_for(1s);
+        std::this_thread::sleep_for(2s);
         if(!stop_thread) {
             cout << "List size : " << list.list.size() << endl;
             for (int i = 0; i < list.getSize(); i++) {
                 list.list.at(i).updateDestination(100,100);
                 list.list.at(i).updateCoordinates();
             }
-            cout << "condition if  = true";
         }
 
     }
+}
+
+void placeMovement(){
+
 }
 

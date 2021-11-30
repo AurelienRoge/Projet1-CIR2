@@ -1,7 +1,7 @@
 #include <thread>
 #include <iostream>
 #include <string>
-#include "threads/airport.hpp"
+#include "threads/planeThreadFunction.hpp"
 
 using namespace std;
 
@@ -13,8 +13,8 @@ int main()
     planeList plane_List;
     bool stop_thread = false;
     std::thread airport_thread(airport_control, std::ref(airport), std::ref(waiting_planes), std::ref(stop_thread));
-    std::thread add_plane(add_plane_sometimes, std::ref(waiting_planes), std::ref(plane_List), ref(stop_thread));
-    std::thread coordinatesUpdateThread(updatePlanesCoordinates, std::ref(plane_List), std::ref(stop_thread));
+    std::thread add_plane(planeThreadFunction, std::ref(waiting_planes), std::ref(plane_List), ref(stop_thread));
+    //std::thread coordinatesUpdateThread(updatePlanesCoordinates, std::ref(plane_List), std::ref(stop_thread));
     Plane testPlane;
     testPlane.identification = "TestPlane";
     testPlane.updateDestination(100,10);

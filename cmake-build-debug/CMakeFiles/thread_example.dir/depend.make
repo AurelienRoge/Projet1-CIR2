@@ -5,5 +5,6 @@ CMakeFiles/thread_example.dir/source.cpp.obj: \
  ../source.cpp \
  ../threads/airport.hpp \
  ../threads/plane.hpp \
+ ../threads/planeThreadFunction.hpp \
  ../tools/coordinatesXY.hpp \
  ../tools/trajectory.h++
