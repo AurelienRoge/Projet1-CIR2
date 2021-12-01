@@ -24,11 +24,12 @@ int main()
         planeTab[i].updateDestination(20,20);
     }
 
-
-
-    thread planeTabThreads[30];
+    vector <thread> planeThreads;
+    for(int i = 0; i  < 1; i++){
+        planeThreads.push_back(thread(planeBehaviour, ref(planeTab[i]), ref(stop_thread)));
+    }
     std::thread airport_thread(airport_control, std::ref(airport), std::ref(waiting_planes), std::ref(stop_thread));
-    std::thread planeGlobalThread(planeThreadFunction, std::ref(waiting_planes), std::ref(planeTab), ref(stop_thread));
+    //std::thread planeGlobalThread(planeThreadFunction, std::ref(waiting_planes), std::ref(planeTab), ref(stop_thread));
     //std::thread coordinatesUpdateThread(updatePlanesCoordinates, std::ref(plane_List), std::ref(stop_thread));
 
 
@@ -56,10 +57,10 @@ int main()
         airport_thread.join();
     }
 
-    if (planeGlobalThread.joinable())
+    /*if (planeGlobalThread.joinable())
     {
         planeGlobalThread.join();
-    }
+    }*/
 
     cout<<airport;
 

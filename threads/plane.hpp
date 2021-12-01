@@ -14,9 +14,9 @@
 using namespace std;
 mutex waiting_planes_mutex;
 
-struct Plane
+class Plane
 {
-    string identification;
+
 private:
     coordinatesXY coords;
     coordinatesXY destination;
@@ -24,6 +24,7 @@ private:
     bool atDestination = true;
     trajectory trajectoire;
 public:
+    string identification;
     string coordsToString();
     void updateDestination(coordinatesXY newDestination);
     void updateDestination(float X, float Y);

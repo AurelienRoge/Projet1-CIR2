@@ -54,11 +54,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="thread_example" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="thread_example" TARGET_NAME="thread_example" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="thread_example" RUN_TARGET_NAME="thread_example">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -85,6 +80,7 @@
       <workItem from="1638275535185" duration="6396000" />
       <workItem from="1638286161686" duration="4365000" />
       <workItem from="1638300963087" duration="4939000" />
+      <workItem from="1638388033745" duration="884000" />
     </task>
     <task id="LOCAL-00001" summary="système de coordonnées">
       <created>1638022453500</created>

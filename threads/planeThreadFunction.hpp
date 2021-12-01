@@ -22,10 +22,11 @@ void planeBehaviour(Plane plane, bool &stop_thread){
         std::this_thread::sleep_for(1s);
         if(plane.isTraveling()){
             plane.updateCoordinates();
+            cout << plane.identification << " : " << plane.coordsToString() << endl;
 
         }
         else{
-            //Plus tard, pour le moment il bouge plus
+            cout << "Plane is at destination";
         }
     }
 }
