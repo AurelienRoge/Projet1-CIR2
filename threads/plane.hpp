@@ -32,6 +32,7 @@ public:
     }
     void updateSpeed(float newSpeed);
     void updateCoordinates();
+    bool isTraveling();
 
     friend ostream &operator<<(ostream &os, const Plane &plane);
 };
@@ -78,6 +79,10 @@ void Plane::updateSpeed(float newSpeed) {
     speed = newSpeed;
 }
 
+bool Plane::isTraveling(){
+    return !atDestination;
+}
+
 class Waiting_planes
 {
     queue<Plane> planes;
@@ -108,27 +113,7 @@ public:
 };
 
 
-
-class planeList{
-private:
-    int size;
-public:
-    vector<Plane> list; //à refaire en prenant l'adresse et non la valeur
-    void newPlaneInList(Plane plane){
-        list.push_back(plane);
-    }
-    void printList(){
-        cout << "planeListPrint :" << endl;
-        for (int i = 0; i < list.size(); i++) {
-            cout << i << ":" << list.at(i) << endl;
-        }
-    }
-    int getSize(){
-        return list.size();
-    }
-};
-
-Plane add_plane_sometimes(Waiting_planes &waiting_planes,planeList &plane_List)
+/*Plane add_plane_sometimes(Waiting_planes &waiting_planes,Plane* &plane_List)
 {
     Plane plane;
     plane.identification = "AF" + to_string(rand()%1000 + 100);
@@ -138,7 +123,7 @@ Plane add_plane_sometimes(Waiting_planes &waiting_planes,planeList &plane_List)
     return plane;
 }
 
-void updatePlanesCoordinates(planeList list, bool &stop_thread){
+void updatePlanesCoordinates(Plane* list, bool &stop_thread){
     while(!stop_thread){
         std::this_thread::sleep_for(2s);
         if(!stop_thread) {
@@ -154,5 +139,5 @@ void updatePlanesCoordinates(planeList list, bool &stop_thread){
 
 void planeMovement(){
 
-}
+}*/
 

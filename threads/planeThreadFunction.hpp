@@ -1,21 +1,8 @@
 #include "airport.hpp"
-bool planesGenerated = false;//Garde en mémoire si on a déjà généré nos avions
-void planeThreadFunction(Waiting_planes &waiting_planes,planeList &plane_List, bool &stop_thread){
 
-    Plane planeTab[30];//Tableau de 30 avions
-    if (planesGenerated == false){
-        for(int i = 0; i < 30; i++){
-            Plane plane;
-            plane.identification = "AF" + to_string(101+i);
+void planeBehaviour(Plane plane, bool &stop_thread);
 
-            waiting_planes.add_a_plane(plane);
-            plane_List.newPlaneInList(plane);//Useless?
-
-            planeTab[i] = plane;
-            planeTab[i].updateDestination(20,20);
-            planesGenerated = true;
-        }
-    }
+void planeThreadFunction(Waiting_planes &waiting_planes,Plane* planeTab, bool &stop_thread){
 
     while (!stop_thread){
 
@@ -24,9 +11,34 @@ void planeThreadFunction(Waiting_planes &waiting_planes,planeList &plane_List, b
             if (i == 2){
                 planeTab[i].updateSpeed(1);
             }
-
             planeTab[i].updateCoordinates();
             cout << i << " : " << planeTab[i].identification << " : " << planeTab[i].coordsToString() << endl;
         }
     }
+}
+
+void planeBehaviour(Plane plane, bool &stop_thread){
+    while(!stop_thread){
+        std::this_thread::sleep_for(1s);
+        if(plane.isTraveling()){
+            plane.updateCoordinates();
+
+        }
+        else{
+            //Plus tard, pour le moment il bouge plus
+        }
+    }
+}
+
+Plane generatePlanes(Waiting_planes &waiting_planes){
+    Plane planeTab[30];//Tableau de 30 avions
+    for(int i = 0; i < 30; i++){
+        Plane plane;
+        plane.identification = "AF" + to_string(101+i);
+        waiting_planes.add_a_plane(plane);
+
+        planeTab[i] = plane;
+        planeTab[i].updateDestination(20,20);
+    }
+    return reinterpret_cast<Plane &&>(planeTab);
 }

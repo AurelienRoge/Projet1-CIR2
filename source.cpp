@@ -10,17 +10,28 @@ int main()
     //	vector<Plane> planes;
     Airport airport;
     Waiting_planes waiting_planes;
-    planeList plane_List;
     bool stop_thread = false;
+
+
+
+    Plane planeTab[30];//Tableau de 30 avions
+    for(int i = 0; i < 30; i++){
+        Plane plane;
+        plane.identification = "AF" + to_string(101+i);
+        waiting_planes.add_a_plane(plane);
+
+        planeTab[i] = plane;
+        planeTab[i].updateDestination(20,20);
+    }
+
+
+
+    thread planeTabThreads[30];
     std::thread airport_thread(airport_control, std::ref(airport), std::ref(waiting_planes), std::ref(stop_thread));
-    std::thread add_plane(planeThreadFunction, std::ref(waiting_planes), std::ref(plane_List), ref(stop_thread));
+    std::thread planeGlobalThread(planeThreadFunction, std::ref(waiting_planes), std::ref(planeTab), ref(stop_thread));
     //std::thread coordinatesUpdateThread(updatePlanesCoordinates, std::ref(plane_List), std::ref(stop_thread));
-    Plane testPlane;
-    testPlane.identification = "TestPlane";
-    testPlane.updateDestination(100,10);
-    testPlane.printTrajectory();
-    cout << "New coords :" << testPlane.coordsToString();
-    plane_List.newPlaneInList(testPlane);
+
+
     while (1)
     {
         //cout << "Boucle while" << endl;
@@ -45,9 +56,9 @@ int main()
         airport_thread.join();
     }
 
-    if (add_plane.joinable())
+    if (planeGlobalThread.joinable())
     {
-        add_plane.join();
+        planeGlobalThread.join();
     }
 
     cout<<airport;
