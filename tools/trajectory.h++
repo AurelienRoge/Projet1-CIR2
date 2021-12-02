@@ -6,27 +6,27 @@ private:
     float coeffY;
 public:
     void calculateTrajectory(coordinatesXY origin, coordinatesXY destination);
-    void printTrajectory();
-    float getCoeffX();
-    float getCoeffY();
+    void printTrajectory() const;
+    float getCoeffX() const;
+    float getCoeffY() const;
 };
 
 void trajectory::calculateTrajectory(coordinatesXY origin, coordinatesXY destination) {
     float totalX = destination.getX() - origin.getX();
     float totalY = destination.getY() - origin.getY();
     float total = totalX + totalY;
-    coeffX = totalX/total;
-    coeffY = 1 - coeffX;
+    coeffX = totalX/std::abs(total);
+    coeffY = totalY/std::abs(total);
 }
 
-void trajectory::printTrajectory() {
+void trajectory::printTrajectory() const {
     std::cout << "X :" << coeffX << " Y :" << coeffY << std::endl;
 }
 
-float trajectory::getCoeffX() {
+float trajectory::getCoeffX() const {
     return coeffX;
 }
-float trajectory::getCoeffY() {
+float trajectory::getCoeffY() const {
     return coeffY;
 }
 

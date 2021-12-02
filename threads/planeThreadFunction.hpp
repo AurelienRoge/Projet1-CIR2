@@ -26,20 +26,12 @@ void planeBehaviour(Plane plane, bool &stop_thread){
 
         }
         else{
-            cout << "Plane is at destination";
+            cout << "Plane is at destination" << endl;
+            this_thread::sleep_for(chrono::seconds(rand()%10));
+            cout << "Taking off to new destination" << endl;
+            int index = rand()%7;
+            plane.updateDestination(0, 0);
         }
     }
 }
 
-Plane generatePlanes(Waiting_planes &waiting_planes){
-    Plane planeTab[30];//Tableau de 30 avions
-    for(int i = 0; i < 30; i++){
-        Plane plane;
-        plane.identification = "AF" + to_string(101+i);
-        waiting_planes.add_a_plane(plane);
-
-        planeTab[i] = plane;
-        planeTab[i].updateDestination(20,20);
-    }
-    return reinterpret_cast<Plane &&>(planeTab);
-}

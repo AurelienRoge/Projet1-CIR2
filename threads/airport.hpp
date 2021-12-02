@@ -14,8 +14,15 @@ std::mutex airport_mutex;
 class Airport
 {
     vector<Plane> planes;
+    coordinatesXY coords;
+
 
 public:
+    string identification;
+    Airport(){
+        coords.setX(rand()%501);
+        coords.setY(rand()%501);
+    }
     void add_a_plane(Plane &plane)
     {
         airport_mutex.lock();
@@ -28,6 +35,12 @@ public:
             cout << i << ": " << planes.at(i) << endl;
 
         }
+    }
+    void printCoords(){
+        cout << identification << " X : " << coords.getX() << " Y : " << coords.getY() << endl;
+    }
+    coordinatesXY coordinates(){
+        return coords;
     }
     friend ostream &operator<<(ostream &os, const Airport &airport);
 };
@@ -56,5 +69,31 @@ void airport_control(Airport &airport, Waiting_planes &waiting_planes, bool &sto
             }
         }
     }
+}
+
+class airportList{
+    vector<Airport> list;
+public:
+    void newAirportInList(Airport airport){
+        list.push_back(airport);
+    }
+    void printList(){
+        for (int i = 0; i < list.size(); i++) {
+            cout << list.at(i);
+        }
+    }
+    coordinatesXY AiportAtIndexCoords(int index);
+    void AiportAtIndexPrintCoords(int index);
+    Airport getAirportAtIndex(int index){
+        return list.at(index);
+    }
+};
+
+coordinatesXY airportList::AiportAtIndexCoords(int index) {
+    return list.at(index).coordinates();
+}
+
+void airportList::AiportAtIndexPrintCoords(int index){
+    list.at(index).printCoords();
 }
 
