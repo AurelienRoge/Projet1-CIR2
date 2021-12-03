@@ -60,7 +60,9 @@ void Plane::updateDestination(float X, float Y) {
 }
 
 void Plane::updateCoordinates() {
-    if((coords.getX() != destination.getX()) && (coords.getY() != destination.getY())){
+    //On vérifie que l'avion n'est pas déjà à destination (avec une petite marge d'erreur)
+    cout << "Plane X : " << coords.getX() << " destination X : " << destination.getX() - 5 << endl;
+    if((coords.getX() < destination.getX() - 5 || coords.getX() > destination.getX() + 5) && (coords.getY() < destination.getY() - 5 || coords.getY() > destination.getY() + 5)){
         float newX = this->coords.getX() + speed * trajectoire.getCoeffX();
         float newY = this->coords.getY() + speed * trajectoire.getCoeffY();
         coords.setX(newX);

@@ -24,13 +24,14 @@ int main()
         planeTab[i].updateDestination(20,20);
     }
 
-    vector <Airport> airport_List;
+
     for(int i = 0; i < 6; i++){
         Airport airport;
         airport.identification = "Airport " + to_string(i+1);
         airport_List.push_back(airport);
         airport_List.at(i).printCoords();
     }
+
     vector <thread> planeThreads;
    for(int i = 0; i  < 1; i++){
         planeThreads.emplace_back(planeBehaviour, ref(planeTab[i]), ref(stop_thread));

@@ -44,6 +44,7 @@ public:
     }
     friend ostream &operator<<(ostream &os, const Airport &airport);
 };
+vector <Airport> airport_List;
 
 ostream &operator<<(ostream &os, const Airport &airport)
 {
