@@ -14,6 +14,7 @@ public:
     void setY(float newY){
         this->Y = newY;
     }
+    float distanceFrom(coordinatesXY point) const;
     coordinatesXY();
     coordinatesXY(float X, float Y);
 };
@@ -26,4 +27,8 @@ coordinatesXY::coordinatesXY() {
 coordinatesXY::coordinatesXY(float X, float Y) {
     this->X = X;
     this->Y = Y;
+}
+
+float coordinatesXY::distanceFrom(coordinatesXY point) const{
+    return std::abs(point.getX() - this->X + point.getY() - this->Y);
 }

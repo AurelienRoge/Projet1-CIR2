@@ -20,8 +20,8 @@ class Airport
 public:
     string identification;
     Airport(){
-        coords.setX(rand()%501);
-        coords.setY(rand()%501);
+        coords.setX(rand()%1200);
+        coords.setY(rand()%1200);
     }
     void add_a_plane(Plane &plane)
     {

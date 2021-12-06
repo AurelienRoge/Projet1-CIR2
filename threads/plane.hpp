@@ -31,9 +31,10 @@ public:
     void printTrajectory(){
         trajectoire.printTrajectory();
     }
-    void updateSpeed(float newSpeed);
+    void speedController();
     void updateCoordinates();
     bool isTraveling();
+
 
     friend ostream &operator<<(ostream &os, const Plane &plane);
 };
@@ -61,8 +62,8 @@ void Plane::updateDestination(float X, float Y) {
 
 void Plane::updateCoordinates() {
     //On vérifie que l'avion n'est pas déjà à destination (avec une petite marge d'erreur)
-    cout << "Plane X : " << coords.getX() << " destination X : " << destination.getX() - 5 << endl;
-    if((coords.getX() < destination.getX() - 5 || coords.getX() > destination.getX() + 5) && (coords.getY() < destination.getY() - 5 || coords.getY() > destination.getY() + 5)){
+    cout << "Plane X : " << coords.getX() << " destination X : " << destination.getX() - 5 << "speed :" << speed << endl;
+    if((coords.getX() < destination.getX() - 10 || coords.getX() > destination.getX() + 10) && (coords.getY() < destination.getY() - 10 || coords.getY() > destination.getY() + 10)){
         float newX = this->coords.getX() + speed * trajectoire.getCoeffX();
         float newY = this->coords.getY() + speed * trajectoire.getCoeffY();
         coords.setX(newX);
@@ -70,6 +71,7 @@ void Plane::updateCoordinates() {
     }
     else{
         atDestination = true;
+        speed = 0;
     }
 }
 
@@ -78,8 +80,29 @@ string Plane::coordsToString() {
     return s;
 }
 
-void Plane::updateSpeed(float newSpeed) {
-    speed = newSpeed;
+void Plane::speedController() {
+    if(coords.distanceFrom(destination) > 250){
+        if(speed < 90){
+            speed += 20;
+        }
+    }
+    else if(coords.distanceFrom(destination) > 160){
+        if (speed > 80){
+            speed -= 20;
+        }
+        else{
+            speed += 15;
+        }
+    }
+    else if((coords.distanceFrom(destination) < 105) && speed > 30){
+        speed -= 25;
+    }
+    else if(coords.distanceFrom(destination) < 5){
+        speed = 1;
+    }
+    else{
+        speed = 10;
+    }
 }
 
 bool Plane::isTraveling(){
