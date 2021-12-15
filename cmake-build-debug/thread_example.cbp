@@ -19,7 +19,7 @@
 			</Target>
 			<Target title="thread_example">
 				<Option output="C:/Users/aurel/Documents/GitHub/Projet1-CIR2/cmake-build-debug/thread_example.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/aurel/Documents/GitHub/Projet1-CIR2/cmake-build-debug"/>
+				<Option working_dir=""/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
@@ -42,7 +42,7 @@
 			</Target>
 			<Target title="thread_example/fast">
 				<Option output="C:/Users/aurel/Documents/GitHub/Projet1-CIR2/cmake-build-debug/thread_example.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/aurel/Documents/GitHub/Projet1-CIR2/cmake-build-debug"/>
+				<Option working_dir=""/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>

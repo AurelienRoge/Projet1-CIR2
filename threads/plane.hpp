@@ -12,11 +12,12 @@
 
 
 using namespace std;
-mutex waiting_planes_mutex;
+mutex planeCoordsMutex;
 
-struct Plane
+coordinatesXY allPlanesCoordinates[30];
+class Plane
 {
-    string identification;
+
 private:
     coordinatesXY coords;
     coordinatesXY destination;
@@ -24,15 +25,18 @@ private:
     bool atDestination = true;
     trajectory trajectoire;
 public:
+    int planeIndex = 0;
+    string identification;
     string coordsToString();
     void updateDestination(coordinatesXY newDestination);
     void updateDestination(float X, float Y);
     void printTrajectory(){
         trajectoire.printTrajectory();
     }
-    void updateSpeed(float newSpeed);
+    void speedController();
     void updateCoordinates();
     bool isTraveling();
+
 
     friend ostream &operator<<(ostream &os, const Plane &plane);
 };
@@ -59,14 +63,17 @@ void Plane::updateDestination(float X, float Y) {
 }
 
 void Plane::updateCoordinates() {
-    if((coords.getX() != destination.getX()) && (coords.getY() != destination.getY())){
+    //On vérifie que l'avion n'est pas déjà à destination (avec une petite marge d'erreur)
+    if((coords.getX() < destination.getX() - 10 || coords.getX() > destination.getX() + 10) && (coords.getY() < destination.getY() - 10 || coords.getY() > destination.getY() + 10)){
         float newX = this->coords.getX() + speed * trajectoire.getCoeffX();
         float newY = this->coords.getY() + speed * trajectoire.getCoeffY();
         coords.setX(newX);
         coords.setY(newY);
+        allPlanesCoordinates[planeIndex] = coords;
     }
     else{
         atDestination = true;
+        speed = 0;
     }
 }
 
@@ -75,69 +82,34 @@ string Plane::coordsToString() {
     return s;
 }
 
-void Plane::updateSpeed(float newSpeed) {
-    speed = newSpeed;
+void Plane::speedController() {
+    if(coords.distanceFrom(destination) > 250){
+        if(speed < 90){
+            speed += 20;
+        }
+    }
+    else if(coords.distanceFrom(destination) > 160){
+        if (speed > 80){
+            speed -= 20;
+        }
+        else{
+            speed += 15;
+        }
+    }
+    else if((coords.distanceFrom(destination) < 105) && speed > 30){
+        speed -= 25;
+    }
+    else if(coords.distanceFrom(destination) < 5){
+        speed = 1;
+    }
+    else{
+        speed = 10;
+    }
 }
 
 bool Plane::isTraveling(){
     return !atDestination;
 }
 
-class Waiting_planes
-{
-    queue<Plane> planes;
 
-public:
-    void add_a_plane(Plane &plane)
-    {
-        waiting_planes_mutex.lock();
-        planes.push(plane);
-        waiting_planes_mutex.unlock();
-    }
-    bool is_a_plane_available()
-    {
-        return !(planes.empty());
-    }
-    optional<Plane> get_a_plane()
-    {
-        if (is_a_plane_available())
-        {
-            waiting_planes_mutex.lock();
-            auto plane = planes.front();
-            planes.pop();
-            waiting_planes_mutex.unlock();
-            return plane;
-        }
-        return nullopt;
-    }
-};
-
-
-/*Plane add_plane_sometimes(Waiting_planes &waiting_planes,Plane* &plane_List)
-{
-    Plane plane;
-    plane.identification = "AF" + to_string(rand()%1000 + 100);
-    waiting_planes.add_a_plane(plane);
-    plane_List.newPlaneInList(plane);
-    //plane_List.printList();
-    return plane;
-}
-
-void updatePlanesCoordinates(Plane* list, bool &stop_thread){
-    while(!stop_thread){
-        std::this_thread::sleep_for(2s);
-        if(!stop_thread) {
-            cout << "List size : " << list.list.size() << endl;
-            for (int i = 0; i < list.getSize(); i++) {
-                list.list.at(i).updateDestination(100,100);
-                list.list.at(i).updateCoordinates();
-            }
-        }
-
-    }
-}
-
-void planeMovement(){
-
-}*/
 

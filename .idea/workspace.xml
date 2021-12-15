@@ -14,11 +14,13 @@
     <list default="true" id="cebb6444-8543-4def-8c3b-a4d798bcba77" name="Changes" comment="système de coordonnées">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/source.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/source.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/vc140.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/threads/airport.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/airport.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/threads/plane.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/plane.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/threads/planeThreadFunction.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/planeThreadFunction.hpp" afterDir="false" />
     </list>
@@ -33,6 +35,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="21VBQFaMZivIxkgQlsoU1tANFo2" />
   <component name="ProjectLevelVcsManager">
@@ -51,9 +61,14 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.cidr.embedded.config" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="CMake Application.CIR2 S1 Project">
+    <configuration name="CIR2 S1 Project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="thread_example" RUN_TARGET_NAME="thread_example" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -69,6 +84,10 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="CMake Application.CIR2 S1 Project" />
+      <item itemvalue="CMake Application.thread_example" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,6 +104,12 @@
       <workItem from="1638275535185" duration="6396000" />
       <workItem from="1638286161686" duration="4365000" />
       <workItem from="1638300963087" duration="4939000" />
+      <workItem from="1638388033745" duration="1267000" />
+      <workItem from="1638462913913" duration="9192000" />
+      <workItem from="1638515895208" duration="2229000" />
+      <workItem from="1638774243203" duration="4175000" />
+      <workItem from="1639572342755" duration="281000" />
+      <workItem from="1639572652018" duration="4065000" />
     </task>
     <task id="LOCAL-00001" summary="système de coordonnées">
       <created>1638022453500</created>
