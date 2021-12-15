@@ -21,7 +21,7 @@ class Plane
 private:
     coordinatesXY coords;
     coordinatesXY destination;
-    float speed = 1;
+    float speed = 0.1;
     bool atDestination = true;
     trajectory trajectoire;
 public:
@@ -36,6 +36,9 @@ public:
     void speedController();
     void updateCoordinates();
     bool isTraveling();
+    float getSpeed(){
+        return speed;
+    }
 
 
     friend ostream &operator<<(ostream &os, const Plane &plane);
@@ -83,27 +86,27 @@ string Plane::coordsToString() {
 }
 
 void Plane::speedController() {
-    if(coords.distanceFrom(destination) > 25){
-        if(speed < 9){
-            speed += 2;
+    if(coords.distanceFrom(destination) > 3.5){
+        if(speed < 1){
+            speed += 0.2;
         }
     }
-    else if(coords.distanceFrom(destination) > 16){
-        if (speed > 8){
-            speed -= 2;
+    else if(coords.distanceFrom(destination) > 3.5){
+        if (speed > 1){
+            speed -= 0.2;
         }
         else{
-            speed += 1.5;
+            speed += 0.1;
         }
     }
-    else if((coords.distanceFrom(destination) < 10.5) && speed > 3){
-        speed -= 2.5;
+    else if((coords.distanceFrom(destination) < 1.05) && speed > 1){
+        speed -= 0.1;
     }
     else if(coords.distanceFrom(destination) < 0.5){
         speed = 0.1;
     }
     else{
-        speed = 1;
+        speed = 0.1;
     }
 }
 

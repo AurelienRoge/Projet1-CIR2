@@ -14,7 +14,7 @@ public:
 void trajectory::calculateTrajectory(coordinatesXY origin, coordinatesXY destination) {
     float totalX = destination.getX() - origin.getX();
     float totalY = destination.getY() - origin.getY();
-    float total = totalX + totalY;
+    float total = abs(totalX) + abs(totalY);
     coeffX = totalX/std::abs(total);
     coeffY = totalY/std::abs(total);
 }
