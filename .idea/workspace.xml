@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="thread_example" targetName="thread_example" />
+      <config projectName="Project1-CIR2" targetName="Project1-CIR2" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,19 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cebb6444-8543-4def-8c3b-a4d798bcba77" name="Changes" comment="système de coordonnées">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/source.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/source.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_example.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/thread_example.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/thread_example.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threads/airport.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/airport.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threads/plane.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/plane.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threads/planeThreadFunction.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/planeThreadFunction.hpp" afterDir="false" />
-    </list>
+    <list default="true" id="cebb6444-8543-4def-8c3b-a4d798bcba77" name="Changes" comment="système de coordonnées" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +35,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="21VBQFaMZivIxkgQlsoU1tANFo2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -61,32 +55,37 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.cidr.embedded.config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
-  <component name="RunManager" selected="CMake Application.CIR2 S1 Project">
-    <configuration name="CIR2 S1 Project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="thread_example" RUN_TARGET_NAME="thread_example" EXPLICIT_BUILD_TARGET_NAME="all">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="thread_example" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="thread_example" TARGET_NAME="thread_example" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="thread_example" RUN_TARGET_NAME="thread_example">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="CMake Application.Project1-CIR2">
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CIR2 S1 Project" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project1-CIR2" RUN_TARGET_NAME="thread_example" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Project1-CIR2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project1-CIR2" TARGET_NAME="Project1-CIR2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project1-CIR2" RUN_TARGET_NAME="Project1-CIR2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake Application.CIR2 S1 Project" />
-      <item itemvalue="CMake Application.thread_example" />
+      <item itemvalue="CMake Application.Project1-CIR2" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -110,6 +109,7 @@
       <workItem from="1638774243203" duration="4175000" />
       <workItem from="1639572342755" duration="281000" />
       <workItem from="1639572652018" duration="4065000" />
+      <workItem from="1639577361277" duration="9466000" />
     </task>
     <task id="LOCAL-00001" summary="système de coordonnées">
       <created>1638022453500</created>
@@ -134,7 +134,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="système de coordonnées" />

@@ -19,9 +19,9 @@ class Airport
 
 public:
     string identification;
-    Airport(){
-        coords.setX(float(rand()%1200));
-        coords.setY(float(rand()%1200));
+    Airport(float x, float y){
+        coords.setX(x);
+        coords.setY(y);
     }
     /*void planesVectorPrint(){
         cout << "Liste avions dans l'aeroport : " << endl;
@@ -49,4 +49,7 @@ ostream &operator<<(ostream &os, const Airport &airport)
     }
     return os;
 }
+
+
+
 

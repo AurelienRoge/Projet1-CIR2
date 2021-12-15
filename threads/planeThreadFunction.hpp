@@ -18,7 +18,8 @@ void planeBehaviour(Plane plane, bool &stop_thread){
             cout << "Plane is at destination" << endl;
             this_thread::sleep_for(chrono::seconds(rand()%10));
             cout << "Taking off to new destination" << endl;
-            int index = rand()%6;
+            srand(plane.planeIndex);
+            int index = rand()%10;
             plane.updateDestination(airport_List.at(index).coordinates());
             airport_List.at(index).printCoords();
             cout << "New trajectory is :";
