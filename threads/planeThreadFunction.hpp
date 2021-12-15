@@ -7,7 +7,9 @@ void planeBehaviour(Plane plane, bool &stop_thread){
     while(!stop_thread){
         std::this_thread::sleep_for(1s);
         if(plane.isTraveling()){
+            planeCoordsMutex.lock();
             plane.updateCoordinates();
+            planeCoordsMutex.unlock();
             plane.speedController();
             cout << plane.identification << " : " << plane.coordsToString() << endl;
 

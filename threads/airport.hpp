@@ -20,22 +20,16 @@ class Airport
 public:
     string identification;
     Airport(){
-        coords.setX(rand()%1200);
-        coords.setY(rand()%1200);
+        coords.setX(float(rand()%1200));
+        coords.setY(float(rand()%1200));
     }
-    void add_a_plane(Plane &plane)
-    {
-        airport_mutex.lock();
-        planes.push_back(plane);
-        airport_mutex.unlock();
-    }
-    void planesVectorPrint(){
+    /*void planesVectorPrint(){
         cout << "Liste avions dans l'aeroport : " << endl;
         for(int i = 0; i < planes.size(); i++){
             cout << i << ": " << planes.at(i) << endl;
 
         }
-    }
+    }*/
     void printCoords(){
         cout << identification << " X : " << coords.getX() << " Y : " << coords.getY() << endl;
     }
@@ -54,47 +48,5 @@ ostream &operator<<(ostream &os, const Airport &airport)
         os << plane.identification << endl;
     }
     return os;
-}
-
-void airport_control(Airport &airport, Waiting_planes &waiting_planes, bool &stop_thread)
-{
-    while (!stop_thread)
-    {
-        while (waiting_planes.is_a_plane_available())
-        {
-            if (auto plane = waiting_planes.get_a_plane())
-            {
-                cout << "Add a plane " << plane.value().identification << endl;
-                airport.add_a_plane(*plane);
-                //airport.planesVectorPrint();
-            }
-        }
-    }
-}
-
-class airportList{
-    vector<Airport> list;
-public:
-    void newAirportInList(Airport airport){
-        list.push_back(airport);
-    }
-    void printList(){
-        for (int i = 0; i < list.size(); i++) {
-            cout << list.at(i);
-        }
-    }
-    coordinatesXY AiportAtIndexCoords(int index);
-    void AiportAtIndexPrintCoords(int index);
-    Airport getAirportAtIndex(int index){
-        return list.at(index);
-    }
-};
-
-coordinatesXY airportList::AiportAtIndexCoords(int index) {
-    return list.at(index).coordinates();
-}
-
-void airportList::AiportAtIndexPrintCoords(int index){
-    list.at(index).printCoords();
 }
 
