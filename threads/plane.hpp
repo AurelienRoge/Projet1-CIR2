@@ -21,7 +21,7 @@ class Plane
 private:
     coordinatesXY coords;
     coordinatesXY destination;
-    float speed = 10;
+    float speed = 1;
     bool atDestination = true;
     trajectory trajectoire;
 public:
@@ -64,7 +64,7 @@ void Plane::updateDestination(float X, float Y) {
 
 void Plane::updateCoordinates() {
     //On vérifie que l'avion n'est pas déjà à destination (avec une petite marge d'erreur)
-    if((coords.getX() < destination.getX() - 10 || coords.getX() > destination.getX() + 10) && (coords.getY() < destination.getY() - 10 || coords.getY() > destination.getY() + 10)){
+    if((coords.getX() < destination.getX() - 1 || coords.getX() > destination.getX() + 1) && (coords.getY() < destination.getY() - 1 || coords.getY() > destination.getY() + 1)){
         float newX = this->coords.getX() + speed * trajectoire.getCoeffX();
         float newY = this->coords.getY() + speed * trajectoire.getCoeffY();
         coords.setX(newX);
@@ -83,27 +83,27 @@ string Plane::coordsToString() {
 }
 
 void Plane::speedController() {
-    if(coords.distanceFrom(destination) > 250){
-        if(speed < 90){
-            speed += 20;
+    if(coords.distanceFrom(destination) > 25){
+        if(speed < 9){
+            speed += 2;
         }
     }
-    else if(coords.distanceFrom(destination) > 160){
-        if (speed > 80){
-            speed -= 20;
+    else if(coords.distanceFrom(destination) > 16){
+        if (speed > 8){
+            speed -= 2;
         }
         else{
-            speed += 15;
+            speed += 1.5;
         }
     }
-    else if((coords.distanceFrom(destination) < 105) && speed > 30){
-        speed -= 25;
+    else if((coords.distanceFrom(destination) < 10.5) && speed > 3){
+        speed -= 2.5;
     }
-    else if(coords.distanceFrom(destination) < 5){
-        speed = 1;
+    else if(coords.distanceFrom(destination) < 0.5){
+        speed = 0.1;
     }
     else{
-        speed = 10;
+        speed = 1;
     }
 }
 
