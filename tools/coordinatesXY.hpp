@@ -30,5 +30,5 @@ coordinatesXY::coordinatesXY(float X, float Y) {
 }
 
 float coordinatesXY::distanceFrom(coordinatesXY point) const{
-    return std::abs(point.getX() - this->X + point.getY() - this->Y);
+    return std::abs(abs(point.getX() - this->X) + abs(point.getY() - this->Y));
 }

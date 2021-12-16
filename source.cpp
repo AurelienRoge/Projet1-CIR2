@@ -31,7 +31,7 @@ int main()
     aure.setCharacterSize(48);
 
     bool stop_thread = false;
-    RenderWindow app(VideoMode(1002, 1024, 32), "My Camera");
+    RenderWindow app(VideoMode(1002, 1024, 32), "Air traffic simulation - Aurelien Roge et Guillaume Leroy");
 
 
     Sprite backgroundSprite;
@@ -54,29 +54,10 @@ int main()
     }
 
 
-
-    for(int i = 0; i < 15; i++){
-        Plane plane;
-        plane.identification = "AF" + to_string(101+i);
-        plane.planeIndex = i;
-        planeTab[i] = plane;
-        planeTab[i].updateDestination(20,20);
-    }
-
     for (int i = 0; i < 15; ++i) {
         text[i].setString(planeTab[i].identification);
         //text[i].setColor(Color::Green);
     }
-
-
-
-
-    vector <thread> planeThreads;
-   for(int i = 0; i  < 15; i++){
-        planeThreads.emplace_back(planeBehaviour, ref(planeTab[i]), ref(stop_thread));
-
-    }
-
 
    Airport airport(292,651);
    airport.identification = "Paris";
@@ -129,8 +110,22 @@ int main()
     airport_List.at(9).printCoords();
 
 
+    for(int i = 0; i < 15; i++){
+        Plane plane;
 
+        plane.identification = "AF" + to_string(101+i);
+        plane.planeIndex = i;
+        planeTab[i] = plane;
+        planeTab[i].setCoords(airport_List.at(rand()%10).coordinates());
+        planeTab[i].updateDestination(airport_List.at(rand()%10).coordinates());
 
+    }
+
+    vector <thread> planeThreads;
+    for(int i = 0; i  < 15; i++){
+        planeThreads.emplace_back(planeBehaviour, ref(planeTab[i]), ref(stop_thread));
+
+    }
 
 
 

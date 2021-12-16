@@ -25,24 +25,19 @@ private:
     bool atDestination = true;
     trajectory trajectoire;
 public:
+
     int planeIndex = 0;
     string identification;
-    string coordsToString();
     void updateDestination(coordinatesXY newDestination);
-    void updateDestination(float X, float Y);
-    void printTrajectory(){
-        trajectoire.printTrajectory();
-    }
+    void printTrajectory();
     void speedController();
+    void setCoords(coordinatesXY newCoords);
     void updateCoordinates();
-    bool isTraveling();
-    float getSpeed(){
-        return speed;
-    }
-
+    [[nodiscard]] bool isTraveling() const;
 
     friend ostream &operator<<(ostream &os, const Plane &plane);
 };
+
 
 ostream &operator<<(ostream &os, const Plane &plane){
     os << "Plane " << plane.identification << " at coordinates :" << "X : " << plane.coords.getX()<< " Y :" << plane.coords.getY();
@@ -57,17 +52,13 @@ void Plane::updateDestination(coordinatesXY newDestination) {
     trajectoire.calculateTrajectory(coords,destination);
 }
 
-void Plane::updateDestination(float X, float Y) {
-
-    atDestination = false;
-    coordinatesXY tmp(X,Y);
-    trajectoire.calculateTrajectory(coords,tmp);
-    destination = tmp;
+void Plane::printTrajectory(){
+    trajectoire.printTrajectory();
 }
 
 void Plane::updateCoordinates() {
     //On vérifie que l'avion n'est pas déjà à destination (avec une petite marge d'erreur)
-    if((coords.getX() < destination.getX() - 1 || coords.getX() > destination.getX() + 1) && (coords.getY() < destination.getY() - 1 || coords.getY() > destination.getY() + 1)){
+    if((coords.getX() < destination.getX() - 0.5 || coords.getX() > destination.getX() + 0.5) && (coords.getY() < destination.getY() - 0.5 || coords.getY() > destination.getY() + 0.5)){
         float newX = this->coords.getX() + speed * trajectoire.getCoeffX();
         float newY = this->coords.getY() + speed * trajectoire.getCoeffY();
         coords.setX(newX);
@@ -80,39 +71,37 @@ void Plane::updateCoordinates() {
     }
 }
 
-string Plane::coordsToString() {
-    string s = "X : " + to_string(coords.getX()) + " Y :" + to_string(coords.getY());
-    return s;
-}
-
 void Plane::speedController() {
-    if(coords.distanceFrom(destination) > 3.5){
-        if(speed < 1){
-            speed += 0.2;
+    float defaultSpeed = 1;
+    if(coords.distanceFrom(destination) > 100){
+        if(speed < 6*defaultSpeed){
+            speed += 0.5;
         }
     }
-    else if(coords.distanceFrom(destination) > 3.5){
-        if (speed > 1){
-            speed -= 0.2;
+    else if(coords.distanceFrom(destination) > 30 && coords.distanceFrom(destination) < 100){
+        if (speed > 3*defaultSpeed){
+            speed -= 0.3;
         }
         else{
-            speed += 0.1;
+            speed += 0.3;
         }
     }
-    else if((coords.distanceFrom(destination) < 1.05) && speed > 1){
-        speed -= 0.1;
+    else if((coords.distanceFrom(destination) < 30) && speed > 2*defaultSpeed){
+        speed -= 0.3;
     }
-    else if(coords.distanceFrom(destination) < 0.5){
-        speed = 0.1;
+    else if(coords.distanceFrom(destination) < 15){
+        speed = defaultSpeed;
     }
-    else{
-        speed = 0.1;
+    else if(coords.distanceFrom(destination) < 5){
+        speed = 0.5;
     }
 }
 
-bool Plane::isTraveling(){
+void Plane::setCoords(coordinatesXY newCoords){
+    coords = newCoords;
+}
+
+bool Plane::isTraveling() const{
     return !atDestination;
 }
-
-
 

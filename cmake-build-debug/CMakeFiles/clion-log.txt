@@ -1,5 +1,14 @@
 "A:\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" C:\Users\aurel\Documents\GitHub\Projet1-CIR2
 -- Found SFML 2.5.1 in C:/SFML/lib/cmake/SFML
 -- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/aurel/Documents/GitHub/Projet1-CIR2/cmake-build-debug
+CMake Error at CMakeLists.txt:8 (add_executable):
+  Cannot find source file:
+
+    threads/airport.cpp
+
+
+CMake Error at CMakeLists.txt:8 (add_executable):
+  No SOURCES given to target: Project1-CIR2
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

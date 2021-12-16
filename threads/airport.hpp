@@ -9,7 +9,6 @@
 #include "plane.hpp"
 
 using namespace std;
-std::mutex airport_mutex;
 
 class Airport
 {
@@ -23,13 +22,7 @@ public:
         coords.setX(x);
         coords.setY(y);
     }
-    /*void planesVectorPrint(){
-        cout << "Liste avions dans l'aeroport : " << endl;
-        for(int i = 0; i < planes.size(); i++){
-            cout << i << ": " << planes.at(i) << endl;
 
-        }
-    }*/
     void printCoords(){
         cout << identification << " X : " << coords.getX() << " Y : " << coords.getY() << endl;
     }

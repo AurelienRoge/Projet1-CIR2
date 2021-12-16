@@ -7,8 +7,8 @@ private:
 public:
     void calculateTrajectory(coordinatesXY origin, coordinatesXY destination);
     void printTrajectory() const;
-    float getCoeffX() const;
-    float getCoeffY() const;
+    [[nodiscard]] float getCoeffX() const;
+    [[nodiscard]] float getCoeffY() const;
 };
 
 void trajectory::calculateTrajectory(coordinatesXY origin, coordinatesXY destination) {
