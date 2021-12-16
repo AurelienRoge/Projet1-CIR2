@@ -6,9 +6,11 @@
 #include <random>
 #include <string>
 #include <optional>
+#include <SFML/Graphics.hpp>
 #include "plane.hpp"
 
 using namespace std;
+using namespace  sf;
 
 class Airport
 {

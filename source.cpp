@@ -2,15 +2,15 @@
 #include <iostream>
 #include <string>
 #include "threads/planeThreadFunction.hpp"
-#include <SFML/Graphics.hpp>
+
 
 
 using namespace  sf;
 using namespace std;
 
 #ifdef _MSC_VER
-#define _PATH_IMG_ "../../../../../img/"
-#else
+//#define _PATH_IMG_ "../../../../../img/"
+//#else
 #define _PATH_IMG_ "../img/"
 #endif
 
@@ -21,41 +21,31 @@ Plane planeTab[15];//Tableau de 15 avions
 
 int main()
 {
-    Text Aeroport, Aeroport1, Aeroport2, Aeroport3, Aeroport4, Aeroport5, Aeroport6, Aeroport7, Aeroport8, Aeroport9;
+    sf::err().rdbuf(nullptr);
+
+
+    vector<Text> AirportNamesVector;
 
     Font font;
     if (!font.loadFromFile("../arial.ttf")) cout<< "erreur police"<<endl;
-    Aeroport.setFont(font);
-    Aeroport.setCharacterSize(20);
-    Aeroport1.setFont(font);
-    Aeroport1.setCharacterSize(20);
-    Aeroport2.setFont(font);
-    Aeroport2.setCharacterSize(20);
-    Aeroport3.setFont(font);
-    Aeroport3.setCharacterSize(20);
-    Aeroport4.setFont(font);
-    Aeroport4.setCharacterSize(20);
-    Aeroport5.setFont(font);
-    Aeroport5.setCharacterSize(20);
-    Aeroport6.setFont(font);
-    Aeroport6.setCharacterSize(20);
-    Aeroport7.setFont(font);
-    Aeroport7.setCharacterSize(20);
-    Aeroport8.setFont(font);
-    Aeroport8.setCharacterSize(20);
-    Aeroport9.setFont(font);
-    Aeroport9.setCharacterSize(20);
+
+    for(int i = 0; i < 10 ; i++){
+        Text tmp;
+        tmp.setFont(font);
+        tmp.setCharacterSize(20);
+        AirportNamesVector.push_back(tmp);
+    }
 
 
     bool stop_thread = false;
     RenderWindow app(VideoMode(1002, 1024, 32), "Air traffic simulation - Aurelien Roge et Guillaume Leroy");
 
 
-    Sprite backgroundSprite, Airport_logoSprite[10];
+    Sprite backgroundSprite;
+    Sprite Airport_logoSprite[10];
     Texture planeImage, backgroundImage, Airport_logoImage;
     backgroundSprite.setScale(sf::Vector2f(1.0, 1.0));
     Sprite PlaneTabSprite[15];
-
 
 
 
@@ -69,7 +59,7 @@ int main()
 
     for (int i = 0; i < 10; ++i) {
         Airport_logoSprite[i].setTexture(Airport_logoImage);
-        Airport_logoSprite[i].setScale(sf::Vector2f(0.008,0.008));
+        Airport_logoSprite[i].setScale(sf::Vector2f(0.01,0.01));
     }
 
 
@@ -78,99 +68,99 @@ int main()
         PlaneTabSprite[i].setScale(sf::Vector2f(0.008, 0.008));
     }
 
-
-    Airport airport(292,651);
-    Airport_logoSprite[0].setPosition(292,651);
+    Airport airport(285, 631);
+    Airport_logoSprite[0].setPosition(280, 631);
     airport.identification = "Paris";
     airport_List.push_back(airport);
     airport_List.at(0).printCoords();
-    Aeroport.setString("Paris");
-    Aeroport.setPosition(292,671);
-    Aeroport.setFillColor(Color::Black);
+    AirportNamesVector[0].setString("Paris");
+    AirportNamesVector[0].setPosition(281, 666);
+    AirportNamesVector[0].setFillColor(Color::Black);
 
 
-    Airport airport1(169,486);
-    Airport_logoSprite[1].setPosition(169,486);
+    Airport airport1(149, 476);
+    Airport_logoSprite[1].setPosition(144, 476);
     airport1.identification = "Dublin";
     airport_List.push_back(airport1);
     airport_List.at(1).printCoords();
-    Aeroport1.setString("Dublin");
-    Aeroport1.setPosition(169,506);
-    Aeroport1.setFillColor(Color::Black);
+    AirportNamesVector[1].setString("Dublin");
+    AirportNamesVector[1].setPosition(134, 511);
+    AirportNamesVector[1].setFillColor(Color::Black);
 
-    Airport airport2(125,851);
-    Airport_logoSprite[2].setPosition(125,851);
+    Airport airport2(135, 841);
+    Airport_logoSprite[2].setPosition(130, 841);
     airport2.identification = "Madrid";
     airport_List.push_back(airport2);
     airport_List.at(2).printCoords();
-    Aeroport2.setString("Madrid");
-    Aeroport2.setPosition(125,871);
-    Aeroport2.setFillColor(Color::Black);
+    AirportNamesVector[2].setString("Madrid");
+    AirportNamesVector[2].setPosition(120, 876);
+    AirportNamesVector[2].setFillColor(Color::Black);
 
-    Airport airport3(18,880);
-    Airport_logoSprite[3].setPosition(18,880);
+    Airport airport3(10, 860);
+    Airport_logoSprite[3].setPosition(5, 860);
     airport3.identification = "Lisbonne";
     airport_List.push_back(airport3);
     airport_List.at(3).printCoords();
-    Aeroport3.setString("Lisbonne");
-    Aeroport3.setPosition(18,900);
-    Aeroport3.setFillColor(Color::Black);
+    AirportNamesVector[3].setString("Lisbonne");
+    AirportNamesVector[3].setPosition(0, 895);
+    AirportNamesVector[3].setFillColor(Color::Black);
 
-    Airport airport4(479,851);
-    Airport_logoSprite[4].setPosition(479,851);
+    Airport airport4(479, 825);
+    Airport_logoSprite[4].setPosition(474, 825);
     airport4.identification = "Rome";
     airport_List.push_back(airport4);
     airport_List.at(4).printCoords();
-    Aeroport4.setString("Rome");
-    Aeroport4.setPosition(479,871);
-    Aeroport4.setFillColor(Color::Black);
+    AirportNamesVector[4].setString("Rome");
+    AirportNamesVector[4].setPosition(459, 860);
+    AirportNamesVector[4].setFillColor(Color::Black);
 
-    Airport airport5(474,451);
-    Airport_logoSprite[5].setPosition(474,451);
-    airport5.identification = "Copenhague";
+    Airport airport5(624, 731);
+    Airport_logoSprite[5].setPosition(619, 731);
+    airport5.identification = "Belgrade";
     airport_List.push_back(airport5);
     airport_List.at(5).printCoords();
-    Aeroport5.setString("Copenhague");
-    Aeroport5.setPosition(474,471);
-    Aeroport5.setFillColor(Color::Black);
+    AirportNamesVector[5].setString("Belgrade");
+    AirportNamesVector[5].setPosition(604, 766);
+    AirportNamesVector[5].setFillColor(Color::Black);
 
-    Airport airport6(539,360);
-    Airport_logoSprite[6].setPosition(539,360);
+    Airport airport6(519, 330);
+    Airport_logoSprite[6].setPosition(514, 330);
     airport6.identification = "Stockholm";
     airport_List.push_back(airport6);
     airport_List.at(6).printCoords();
-    Aeroport6.setString("Stockholm");
-    Aeroport6.setPosition(539,380);
-    Aeroport6.setFillColor(Color::Black);
+    AirportNamesVector[6].setString("Stockholm");
+    AirportNamesVector[6].setPosition(495, 365);
+    AirportNamesVector[6].setFillColor(Color::Black);
 
-    Airport airport7(559,574);
-    Airport_logoSprite[7].setPosition(559,574);
-    airport7.identification = "Varsovie";
+    Airport airport7(830, 345);
+    Airport_logoSprite[7].setPosition(825, 345);
+    airport7.identification = "Moscou";
     airport_List.push_back(airport7);
     airport_List.at(7).printCoords();
-    Aeroport7.setString("Varsovie");
-    Aeroport7.setPosition(559,594);
-    Aeroport7.setFillColor(Color::Black);
+    AirportNamesVector[7].setString("Moscou");
+    AirportNamesVector[7].setPosition(815, 375);
+    AirportNamesVector[7].setFillColor(Color::Black);
 
-    Airport airport8(494,564);
-    Airport_logoSprite[8].setPosition(494,564);
+    Airport airport8(464, 514);
+    Airport_logoSprite[8].setPosition(459, 514);
     airport8.identification = "Berlin";
     airport_List.push_back(airport8);
     airport_List.at(8).printCoords();
-    Aeroport8.setString("Berlin");
-    Aeroport8.setPosition(494,584);
-    Aeroport8.setFillColor(Color::Black);
+    AirportNamesVector[8].setString("Berlin");
+    AirportNamesVector[8].setPosition(454, 549);
+    AirportNamesVector[8].setFillColor(Color::Black);
 
-    Airport airport9(829,807);
-    Airport_logoSprite[9].setPosition(829,807);
+    Airport airport9(829, 807);
+    Airport_logoSprite[9].setPosition(824, 807);
     airport9.identification = "Istanbul";
     airport_List.push_back(airport9);
     airport_List.at(9).printCoords();
-    Aeroport9.setString("Istanbul");
-    Aeroport9.setPosition(829,827);
-    Aeroport9.setFillColor(Color::Black);
+    AirportNamesVector[9].setString("Istanbul");
+    AirportNamesVector[9].setPosition(814, 842);
+    AirportNamesVector[9].setFillColor(Color::Black);
 
 
+    srand(time(nullptr));
     for(int i = 0; i < 15; i++){
         Plane plane;
 
@@ -180,6 +170,20 @@ int main()
         planeTab[i].setCoords(airport_List.at(rand()%10).coordinates());
         planeTab[i].updateDestination(airport_List.at(rand()%10).coordinates());
 
+    }
+
+
+
+
+    vector<Text> PlanesNamesVector;
+
+    for(int i = 0; i < 15; i++){
+        Text text;
+        text.setFont(font);
+        text.setCharacterSize(15);
+        text.setString(planeTab[i].identification);
+        text.setFillColor(Color::Black);
+        PlanesNamesVector.push_back(text);
     }
 
     vector <thread> planeThreads;
@@ -205,36 +209,21 @@ int main()
 
         app.clear();
         app.draw(backgroundSprite);
-        app.draw(Airport_logoSprite[0]);
-        app.draw(Airport_logoSprite[1]);
-        app.draw(Airport_logoSprite[2]);
-        app.draw(Airport_logoSprite[3]);
-        app.draw(Airport_logoSprite[4]);
-        app.draw(Airport_logoSprite[5]);
-        app.draw(Airport_logoSprite[6]);
-        app.draw(Airport_logoSprite[7]);
-        app.draw(Airport_logoSprite[8]);
-        app.draw(Airport_logoSprite[9]);
+        for(int i = 0; i < 10; i++){
+            app.draw(Airport_logoSprite[i]);
+        }
 
         for (int i = 0; i < 15; ++i) {
             PlaneTabSprite[i].setPosition(allPlanesCoordinates[i].getX(),allPlanesCoordinates[i].getY());
+            PlanesNamesVector[i].setPosition(allPlanesCoordinates[i].getX() + 20,allPlanesCoordinates[i].getY() - 8);
             app.draw(PlaneTabSprite[i]);
+            app.draw(PlanesNamesVector[i]);
         }
 
-        app.draw(Aeroport);
-        app.draw(Aeroport1);
-        app.draw(Aeroport2);
-        app.draw(Aeroport3);
-        app.draw(Aeroport4);
-        app.draw(Aeroport5);
-        app.draw(Aeroport6);
-        app.draw(Aeroport7);
-        app.draw(Aeroport8);
-        app.draw(Aeroport9);
 
-
-
-
+        for(int i = 0; i < 10; i++){
+            app.draw(AirportNamesVector[i]);
+        }
 
 
         app.display();

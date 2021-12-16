@@ -11,7 +11,7 @@ void planeBehaviour(Plane plane, bool &stop_thread){
 
         }
         else{
-            cout << plane.identification <<  " is at destination" << endl;
+            cout << plane.identification <<  " is at destination, distanceFromDestination :" << endl;
             this_thread::sleep_for(chrono::seconds(2s));
             cout << plane.identification << "Taking off to new destination" << endl;
             srand((plane.planeIndex + 1)*time(nullptr));

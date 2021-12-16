@@ -58,7 +58,7 @@ void Plane::printTrajectory(){
 
 void Plane::updateCoordinates() {
     //On vérifie que l'avion n'est pas déjà à destination (avec une petite marge d'erreur)
-    if((coords.getX() < destination.getX() - 0.5 || coords.getX() > destination.getX() + 0.5) && (coords.getY() < destination.getY() - 0.5 || coords.getY() > destination.getY() + 0.5)){
+    if(coords.distanceFrom(destination) > 1){
         float newX = this->coords.getX() + speed * trajectoire.getCoeffX();
         float newY = this->coords.getY() + speed * trajectoire.getCoeffY();
         coords.setX(newX);
@@ -93,7 +93,10 @@ void Plane::speedController() {
         speed = defaultSpeed;
     }
     else if(coords.distanceFrom(destination) < 5){
-        speed = 0.5;
+        speed = 0.4;
+    }
+    else if(coords.distanceFrom(destination) < 2){
+        speed = 0.1;
     }
 }
 
