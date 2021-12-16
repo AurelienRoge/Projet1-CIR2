@@ -14,23 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cebb6444-8543-4def-8c3b-a4d798bcba77" name="Changes" comment="système de coordonnées">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2021-12-15T17-00-39-0277.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project1-CIR2.dir/source.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project1-CIR2.dir/source.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project1-CIR2.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Project1-CIR2.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Project1-CIR2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Project1-CIR2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Project1-CIR2.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Project1-CIR2.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Project1-CIR2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Project1-CIR2.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threads/airport.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/airport.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threads/plane.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/plane.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/threads/planeThreadFunction.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/threads/planeThreadFunction.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/coordinatesXY.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tools/coordinatesXY.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/trajectory.h++" beforeDir="false" afterPath="$PROJECT_DIR$/tools/trajectory.h++" afterDir="false" />
-    </list>
+    <list default="true" id="cebb6444-8543-4def-8c3b-a4d798bcba77" name="Changes" comment="système de coordonnées" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +63,11 @@
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunManager" selected="CMake Application.CIR2 S1 Project">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -92,11 +81,6 @@
     <configuration name="Project1-CIR2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project1-CIR2" TARGET_NAME="Project1-CIR2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project1-CIR2" RUN_TARGET_NAME="Project1-CIR2">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -154,7 +138,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="système de coordonnées" />
